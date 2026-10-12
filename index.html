@@ -3,114 +3,326 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MultiGen Profit Lab</title>
+<meta name="theme-color" content="#0b1020">
+<meta name="description" content="MultiGen Profit Lab provides practical AI tools, business resources, and customer inquiry systems for small businesses.">
+<title>MultiGen Profit Lab | Work Smarter. Grow Faster.</title>
 <style>
+:root {
+--bg:#0b1020;
+--panel:#121a2d;
+--panel2:#18233a;
+--text:#f4f7ff;
+--muted:#a9b6ce;
+--teal:#35e0c0;
+--purple:#a78bfa;
+--line:#293650;
+}
+* {box-sizing:border-box}
+html {scroll-behavior:smooth}
 body {
-margin: 0;
-font-family: Arial, sans-serif;
-background: #0b1020;
-color: white;
-text-align: center;
+margin:0;background:var(--bg);color:var(--text);
+font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+line-height:1.6;
 }
-header { padding: 24px; background: #151d35; }
-h1 { color: #2dd4bf; }
-main { max-width: 850px; margin: auto; padding: 25px; }
+a {color:inherit;text-decoration:none}
+button,input {font:inherit}
+.container {width:min(1100px,92%);margin:auto}
+header {
+position:sticky;top:0;z-index:10;
+background:rgba(11,16,32,.92);
+backdrop-filter:blur(14px);
+border-bottom:1px solid var(--line);
+}
+.nav {min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand {display:flex;align-items:center;gap:11px;font-weight:850;letter-spacing:.4px}
+.logo {
+width:43px;height:43px;border-radius:13px;
+display:grid;place-items:center;color:#07111c;
+background:linear-gradient(135deg,var(--teal),#7cdbff);
+font-size:23px;font-weight:900;
+}
+.brand small {display:block;color:var(--teal);font-size:10px;letter-spacing:2.5px}
+nav {display:flex;gap:23px;align-items:center;font-size:14px;color:var(--muted)}
+nav a:hover {color:var(--teal)}
+.btn {
+display:inline-flex;justify-content:center;align-items:center;gap:8px;
+border:1px solid transparent;border-radius:12px;padding:12px 18px;
+background:var(--teal);color:#07111c;font-weight:800;cursor:pointer;
+transition:transform .2s,opacity .2s;
+}
+.btn:hover {transform:translateY(-2px)}
+.btn.secondary {background:transparent;border-color:var(--line);color:var(--text)}
+.hero {padding:86px 0 65px;overflow:hidden}
+.hero-grid {display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:45px}
+.eyebrow {
+display:inline-block;border:1px solid #285d60;background:#112d35;
+color:var(--teal);padding:7px 12px;border-radius:99px;font-size:12px;
+font-weight:750;letter-spacing:1px;text-transform:uppercase;
+}
+h1 {font-size:clamp(40px,6vw,68px);line-height:1.06;letter-spacing:-2.5px;margin:20px 0}
+.gradient {background:linear-gradient(100deg,var(--teal),#94d9ff,var(--purple));color:transparent;background-clip:text}
+.lead {font-size:18px;color:var(--muted);max-width:600px}
+.actions {display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.trust {display:flex;gap:18px;flex-wrap:wrap;color:var(--muted);font-size:12px;margin-top:26px}
+.hero-card {
+border:1px solid #34435f;border-radius:25px;padding:25px;
+background:radial-gradient(ellipse at top right,#23385b 0,transparent 55%),var(--panel);
+box-shadow:0 25px 90px #0005;
+}
+.dash-top {display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}
+.dot {width:9px;height:9px;border-radius:50%;background:var(--teal);display:inline-block;margin-right:7px}
+.metric {border:1px solid var(--line);background:#0d1527;border-radius:15px;padding:17px;margin:12px 0}
+.metric strong {font-size:25px;display:block}
+.metric span {font-size:12px;color:var(--muted)}
+.mini-grid {display:grid;grid-template-columns:1fr 1fr;gap:12px}
+section {padding:66px 0}
+.section-head {max-width:650px;margin-bottom:30px}
+.kicker {color:var(--teal);font-weight:800;text-transform:uppercase;letter-spacing:1.5px;font-size:12px}
+h2 {font-size:clamp(29px,4vw,42px);line-height:1.15;letter-spacing:-1px;margin:10px 0 13px}
+.section-head p,.muted {color:var(--muted)}
+.cards {display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
 .card {
-background: #18223b;
-border: 1px solid #34415e;
-border-radius: 15px;
-padding: 22px;
-margin: 20px 0;
+padding:23px;border:1px solid var(--line);background:var(--panel);
+border-radius:19px;display:flex;flex-direction:column;align-items:flex-start;
 }
-button, .button {
-display: inline-block;
-background: #7657ff;
-color: white;
-border: 0;
-border-radius: 8px;
-padding: 12px 18px;
-cursor: pointer;
-text-decoration: none;
+.card:hover {border-color:#527f90}
+.icon {
+width:48px;height:48px;border-radius:14px;display:grid;place-items:center;
+background:#14353b;color:var(--teal);font-size:23px;margin-bottom:14px;
 }
+.card h3 {margin:4px 0 8px;font-size:19px}
+.card p {margin:0 0 18px;color:var(--muted);font-size:14px}
+.card .btn {margin-top:auto}
+.price {font-size:34px;font-weight:850;margin:8px 0}
+.price small {font-size:12px;color:var(--muted);font-weight:500}
+.tag {font-size:11px;font-weight:800;color:var(--purple);text-transform:uppercase;letter-spacing:1px}
+.featured {border-color:#387e7b;background:linear-gradient(160deg,#17323a,var(--panel) 65%)}
+.tool-layout {display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.tool {padding:25px;border:1px solid var(--line);border-radius:20px;background:var(--panel)}
+label {display:block;margin:14px 0 6px;font-size:13px;color:var(--muted)}
 input {
-width: min(90%, 350px);
-padding: 12px;
-margin: 8px;
-border-radius: 7px;
+width:100%;padding:12px;border-radius:10px;border:1px solid var(--line);
+background:#0a1222;color:var(--text);outline:none;
 }
-p { line-height: 1.6; color: #d0d8ed; }
+input:focus {border-color:var(--teal)}
+.result {margin-top:17px;padding:15px;border-radius:12px;background:#0b302e;color:var(--teal);font-weight:750}
+.qr-wrap {margin-top:18px;text-align:center}
+.qr-wrap img {max-width:220px;width:100%;background:white;border-radius:12px;padding:10px}
+.contact {
+padding:35px;border:1px solid #2d555d;border-radius:24px;
+background:radial-gradient(ellipse at top right,#173844,transparent 65%),var(--panel);
+display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
+}
+footer {border-top:1px solid var(--line);padding:27px 0;color:var(--muted);font-size:12px}
+.footer-row {display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.notice {font-size:12px;color:var(--muted);margin-top:12px}
+@media(max-width:760px) {
+.hero {padding-top:55px}
+.hero-grid,.tool-layout {grid-template-columns:1fr}
+.cards {grid-template-columns:1fr}
+nav {gap:12px}
+nav a:not(.nav-cta) {display:none}
+.hero-card {max-width:500px}
+section {padding:48px 0}
+.contact {padding:25px}
+}
 </style>
 </head>
 <body>
 <header>
-<h1>MultiGen Profit Lab</h1>
-<p>Build smarter. Grow step by step.</p>
+<div class="container nav">
+<a class="brand" href="#home" aria-label="MultiGen Profit Lab home">
+<span class="logo">M</span>
+<span>MULTIGEN<small>PROFIT LAB</small></span>
+</a>
+<nav aria-label="Main navigation">
+<a href="#services">Services</a>
+<a href="#tools">Free tools</a>
+<a href="#about">About</a>
+<a class="btn nav-cta" href="#contact">Get started ↗</a>
+</nav>
+</div>
 </header>
 
 <main>
-<h2>Welcome to Your Digital Business Hub</h2>
-<p>Explore digital products, business tools, and resources
-designed to help you work smarter.</p>
-
-<section class="card">
-<h2>Digital Product Shop</h2>
-<p><strong>Digital Starter Bundle</strong></p>
-<p>Your first digital guide or template bundle will go here.</p>
-<p>Products and checkout links will be added before launch.</p>
-<button onclick="alert('Products and checkout are coming soon!')">
-Explore Products
-</button>
+<section class="hero" id="home">
+<div class="container hero-grid">
+<div>
+<span class="eyebrow">✦ Practical AI for everyday business</span>
+<h1>Work smarter.<br><span class="gradient">Grow with purpose.</span></h1>
+<p class="lead">Simple AI resources and organized business systems to help small businesses manage customer inquiries, save time, and work more confidently.</p>
+<div class="actions">
+<a class="btn" href="#services">Explore services →</a>
+<a class="btn secondary" href="#tools">Try free tools</a>
+</div>
+<div class="trust"><span>✓ Practical resources</span><span>✓ Beginner-friendly</span><span>✓ Built for small business</span></div>
+</div>
+<div class="hero-card">
+<div class="dash-top"><strong>YOUR BUSINESS TOOLKIT</strong><span style="color:var(--teal);font-size:12px">● READY TO EXPLORE</span></div>
+<div class="metric"><span>YOUR NEXT STEP</span><strong>Turn busywork into a system.</strong><span>Start with one useful improvement.</span></div>
+<div class="mini-grid">
+<div class="metric"><strong>AI</strong><span>Response templates</span></div>
+<div class="metric"><strong>✓</strong><span>Follow-up checklists</span></div>
+<div class="metric"><strong>QR</strong><span>Quick code tool</span></div>
+<div class="metric"><strong>↗</strong><span>Profit planning</span></div>
+</div>
+</div>
+</div>
 </section>
 
-<section class="card">
-<h2>QR Code Generator</h2>
-<p>Enter a public website address to create a QR code.</p>
-<input id="link" placeholder="https://example.com">
-<br>
-<button onclick="makeQR()">Generate QR Code</button>
-<div id="result"></div>
+<section id="services">
+<div class="container">
+<div class="section-head">
+<span class="kicker">What we offer</span>
+<h2>Small steps. Smarter systems.</h2>
+<p>Practical resources designed to help you organize everyday business tasks. Choose the support that fits your next step.</p>
+</div>
+<div class="cards">
+<article class="card featured">
+<div class="icon">✉</div><span class="tag">Done-with-you setup</span>
+<h3>Small Business AI Inquiry Setup</h3>
+<div class="price">$150 <small>one-time introductory price</small></div>
+<p>Customer-response templates, up to 10 FAQ drafts based on your approved information, a lead-tracking spreadsheet, and a follow-up checklist.</p>
+<a class="btn" href="#contact">Ask about this service →</a>
+</article>
+<article class="card">
+<div class="icon">▦</div><span class="tag">Digital resources</span>
+<h3>Small Business Starter Bundle</h3>
+<div class="price">$19 <small>planned digital product</small></div>
+<p>A practical collection of inquiry templates, lead-tracker guidance, a weekly planner, follow-up checklist, and AI prompts.</p>
+<a class="btn secondary" href="#contact">Ask about the bundle →</a>
+</article>
+<article class="card">
+<div class="icon">⚙</div><span class="tag">Free utilities</span>
+<h3>Simple Business Tools</h3>
+<div class="price">Free</div>
+<p>Try the QR code generator and profit calculator below to support your day-to-day planning.</p>
+<a class="btn secondary" href="#tools">Explore tools ↓</a>
+</article>
+</div>
+<p class="notice">Service descriptions are offers, not guarantees of revenue or business results. The digital bundle is presented as planned until delivery and payment are set up.</p>
+</div>
 </section>
 
-<section class="card">
-<h2>Profit Tracker</h2>
-<p>Use this simple calculator to estimate your profit.</p>
-<input id="sales" type="number" min="0" placeholder="Total sales ($)">
-<br>
-<input id="costs" type="number" min="0" placeholder="Total costs ($)">
-<br>
-<button onclick="calculateProfit()">Calculate Profit</button>
-<h3 id="profit"></h3>
+<section id="tools" style="background:#0e1526;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+<div class="container">
+<div class="section-head">
+<span class="kicker">Free business utilities</span>
+<h2>Your toolkit, in one place.</h2>
+<p>Use these simple tools in your browser. The profit calculator is an estimate, not financial advice.</p>
+</div>
+<div class="tool-layout">
+<div class="tool">
+<div class="icon">↗</div>
+<h3>Profit Goal Calculator</h3>
+<p class="muted">Estimate how many sales you need to reach a monthly revenue goal.</p>
+<label for="goal">Monthly revenue goal ($)</label>
+<input id="goal" type="number" min="0" step="1" value="500">
+<label for="price">Price per sale ($)</label>
+<input id="price" type="number" min="0.01" step="0.01" value="19">
+<label for="cost">Estimated cost per sale ($)</label>
+<input id="cost" type="number" min="0" step="0.01" value="0">
+<div class="result" id="profitResult" aria-live="polite">Calculating…</div>
+<p class="notice">Excludes taxes, payment fees, and other business expenses.</p>
+</div>
+<div class="tool">
+<div class="icon">▦</div>
+<h3>QR Code Generator</h3>
+<p class="muted">Create a QR code for a website, booking page, or digital contact link.</p>
+<label for="qrText">Website URL or text</label>
+<input id="qrText" type="url" placeholder="https://example.com" value="https://yeri762.github.io/multigen-profit-lab/">
+<div class="actions"><button class="btn" id="makeQr" type="button">Generate QR code</button></div>
+<div class="qr-wrap" id="qrOutput" aria-live="polite"></div>
+<p class="notice">QR creation uses a third-party online service. Avoid entering confidential information.</p>
+</div>
+</div>
+</div>
 </section>
 
-<section class="card">
-<h2>Customer Capture</h2>
-<p>Customer signup and secure data storage will be
-connected in a later step.</p>
+<section id="about">
+<div class="container">
+<div class="section-head">
+<span class="kicker">About MultiGen Profit Lab</span>
+<h2>Useful tools. Clear next steps.</h2>
+<p>Our focus is making AI and basic business organization more approachable for small businesses and first-time entrepreneurs. We aim to provide practical templates and simple systems without unnecessary complexity.</p>
+</div>
+<div class="cards">
+<article class="card"><div class="icon">✦</div><h3>Keep it simple</h3><p>Easy-to-follow resources that make everyday tasks more manageable.</p></article>
+<article class="card"><div class="icon">◎</div><h3>Build better habits</h3><p>Organize customer questions and follow-ups with repeatable processes.</p></article>
+<article class="card"><div class="icon">↗</div><h3>Grow step by step</h3><p>Start with a small improvement and expand when it makes sense for your business.</p></article>
+</div>
+</div>
+</section>
+
+<section id="contact">
+<div class="container">
+<div class="contact">
+<div>
+<span class="kicker">Ready for your next step?</span>
+<h2>Let's simplify your workflow.</h2>
+<p class="muted">Reach out to discuss the inquiry setup or ask about our planned digital resources.</p>
+<p class="notice">Contact email and checkout are not connected yet. Add your preferred business contact method before promoting this page.</p>
+</div>
+<a class="btn" href="mailto:">Set up contact email ↗</a>
+</div>
+</div>
 </section>
 </main>
 
-<footer><p>© 2026 MultiGen Profit Lab</p></footer>
+<footer>
+<div class="container footer-row">
+<span>© <span id="year"></span> MultiGen Profit Lab</span>
+<span>Practical AI resources for small business.</span>
+<a href="#home">Back to top ↑</a>
+</div>
+</footer>
 
 <script>
-function makeQR() {
-const link = document.getElementById('link').value.trim();
-if (!link) {
-alert('Please enter a website address.');
+const goal = document.getElementById('goal');
+const price = document.getElementById('price');
+const cost = document.getElementById('cost');
+const result = document.getElementById('profitResult');
+
+function calculateProfit() {
+const g = Number(goal.value);
+const p = Number(price.value);
+const c = Number(cost.value);
+if (goal.value === '' || price.value === '' || cost.value === '' ||
+!Number.isFinite(g) || !Number.isFinite(p) || !Number.isFinite(c) ||
+g < 0 || p <= 0 || c < 0 || c >= p) {
+result.textContent = 'Enter a valid goal and a sale price greater than the cost.';
 return;
 }
-const url = 'https://api.qrserver.com/v1/create-qr-code/?size=220x220&data='
-+ encodeURIComponent(link);
-document.getElementById('result').innerHTML =
-'<p><img alt="QR Code" width="220" height="220" src="' +
-url + '"></p><a class="button" target="_blank" rel="noopener" href="' +
-url + '">Open QR Image</a>';
+const margin = p - c;
+const sales = Math.ceil(g / margin);
+result.textContent = `${sales} sales needed · $${(sales * margin).toFixed(2)} estimated amount after listed per-sale costs`;
 }
-function calculateProfit() {
-const sales = Number(document.getElementById('sales').value);
-const costs = Number(document.getElementById('costs').value);
-document.getElementById('profit').textContent =
-'Estimated profit: $' + (sales - costs).toFixed(2);
+[goal,price,cost].forEach(el => el.addEventListener('input',calculateProfit));
+calculateProfit();
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+document.getElementById('makeQr').addEventListener('click', () => {
+const value = document.getElementById('qrText').value.trim();
+const output = document.getElementById('qrOutput');
+output.replaceChildren();
+if (!value) {
+output.textContent = 'Enter a URL or text first.';
+return;
 }
+const img = document.createElement('img');
+img.alt = 'Generated QR code';
+img.loading = 'lazy';
+img.src = 'https://api.qrserver.com/v1/create-qr-code/?size=240x240&data=' + encodeURIComponent(value);
+const link = document.createElement('a');
+link.className = 'btn secondary';
+link.style.marginTop = '12px';
+link.textContent = 'Open QR image';
+link.href = img.src;
+link.target = '_blank';
+link.rel = 'noopener noreferrer';
+output.append(img, document.createElement('br'), link);
+});
 </script>
 </body>
 </html>
