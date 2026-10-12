@@ -1,71 +1,117 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MultiGen | Business Formation Services</title>
+<title>MultiGen | Business Formation & Credit Foundation</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}body{font-family:Arial,sans-serif}
-header{display:flex;justify-content:space-between;padding:16px 20px;border-bottom:1px solid #eee;position:sticky;top:0;background:#fff}
-.logo{font-weight:900;font-size:20px}.btn{background:#111;color:#fff;padding:12px 20px;border-radius:30px;text-decoration:none;display:inline-block;font-size:14px}
-.hero{padding:60px 20px;max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.products{max-width:1100px;margin:0 auto;padding:40px 20px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.card{border:1px solid #eee;border-radius:12px;padding:20px}
-.price{font-size:28px;font-weight:800;margin:8px 0}
-@media(max-width:800px){.hero,.products{grid-template-columns:1fr}}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;background:#fff;color:#111;line-height:1.6}
+nav{position:sticky;top:0;background:#fff;border-bottom:1px solid #eaeaea;z-index:50}
+.nav{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:62px;padding:0 20px}
+.logo{font-weight:900;font-size:20px;letter-spacing:-.5px}.logo span{color:#2563eb}
+.links{display:flex;gap:22px}.links a{text-decoration:none;color:#444;font-size:14px;font-weight:500}
+.hero{max-width:1100px;margin:0 auto;padding:70px 20px;display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}
+.hero h1{font-size:44px;line-height:1.05;letter-spacing:-1px;margin-bottom:14px}
+.hero p{color:#555;font-size:17px;margin-bottom:20px}
+.btn{display:inline-block;padding:12px 20px;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none}
+.btn-dark{background:#111;color:#fff}.btn-light{background:#fff;border:1px solid #ddd;color:#111}
+.card{background:#f8f9fb;border:1px solid #eee;border-radius:14px;padding:22px}
+section{max-width:1100px;margin:0 auto;padding:56px 20px}
+.label{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#2563eb;font-weight:700;margin-bottom:8px}
+h2{font-size:30px;letter-spacing:-.5px;margin-bottom:10px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:20px}
+.box{border:1px solid #e6e6e6;border-radius:12px;padding:20px;background:#fff}
+.box h3{font-size:16px;margin-bottom:6px}.box p{font-size:13px;color:#555}
+.pricing{background:#f8f9fb;max-width:100%}.pricing-inner{max-width:1100px;margin:0 auto;padding:56px 20px}
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:24px}
+.pcard{border:1px solid #e6e6e6;border-radius:16px;padding:26px;background:#fff;position:relative}
+.pcard.popular{border:2px solid #111}
+.pprice{font-size:34px;font-weight:800;margin:10px 0}.pprice span{font-size:13px;font-weight:400;color:#666}
+.pcard ul{list-style:none;margin:16px 0}.pcard li{font-size:13px;padding:5px 0}
+.badge{position:absolute;top:-10px;left:20px;background:#111;color:#fff;font-size:10px;padding:4px 8px;border-radius:12px}
+footer{border-top:1px solid #eee;padding:30px 20px;font-size:12px;color:#666}
+#chat{position:fixed;bottom:18px;right:18px;width:350px;max-width:92vw;z-index:999;border:1px solid #ddd;border-radius:12px;overflow:hidden;box-shadow:0 10px 28px rgba(0,0,0,.15)}
+#chead{background:#111;color:#fff;padding:10px 14px;font-size:13px;font-weight:600;display:flex;justify-content:space-between;cursor:pointer}
+#cbody{background:#fff;height:440px;display:none;flex-direction:column}
+#cmsgs{flex:1;overflow:auto;padding:10px;background:#fbfbfb}
+.bot{background:#fff;border:1px solid #eee;border-radius:10px;padding:8px 10px;margin:5px 0;font-size:12px}
+.user{background:#111;color:#fff;border-radius:10px;padding:8px 10px;margin:5px 0;font-size:12px;text-align:right}
+@media(max-width:800px){.hero,.grid3,.price-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<header><div class="logo">MultiGen.</div><div>multigenprofitlab@gmail.com</div></header>
+
+<nav><div class="nav"><div class="logo">MultiGen<span>.</span></div><div class="links"><a href="#services">Services</a><a href="#pricing">Pricing</a><a href="#how">How it works</a><a href="mailto:multigenprofitlab@gmail.com">Contact</a></div></div></nav>
 
 <div class="hero">
 <div>
-<h1 style="font-size:42px;line-height:.95;letter-spacing:-1px">Get your business set up right.</h1>
-<p style="margin:16px 0;color:#555">LLC guidance, EIN, DUNS, website + email. Based in Pembroke, NC. Nationwide service. No subscriptions.</p>
-<a href="#shop" class="btn">Shop Packages</a>
-</div>
-<div style="background:#f5f5f3;border-radius:16px;padding:20px">
-<b>How it works:</b><br>1. Pick package below<br>2. Click Buy -> emails us<br>3. We send payment link + onboard you in 24h
-</div>
-</div>
-
-<div id="shop" class="products">
-<div class="card">
-<h3>Starter Guide</h3><div class="price">$49</div>
-<p style="font-size:13px;color:#555">PDF blueprint, EIN/DUNS walkthrough, 15 vendor list, scripts. Instant email delivery.</p>
-<a class="btn" style="margin-top:12px;width:100%;text-align:center" href="mailto:multigenprofitlab@gmail.com?subject=I want Starter $49 - MultiGen&body=Hi, I want the Starter Guide $49. My name: %0AMy email: %0A">Buy $49 - Email Us</a>
-</div>
-<div class="card" style="border:2px solid #111">
-<h3>Growth Setup ⭐ Most Popular</h3><div class="price">$197</div>
-<p style="font-size:13px;color:#555">30-min call, EIN/DUNS done with you, business email, 1-page website, 30 days support.</p>
-<a class="btn" style="margin-top:12px;width:100%;text-align:center;background:#111" href="mailto:multigenprofitlab@gmail.com?subject=I want Growth $197 - MultiGen&body=Hi, I want Growth Setup $197. My name: %0AMy phone: %0A">Buy $197 - Email Us</a>
+<div class="label">Business Formation Services • Pembroke, NC</div>
+<h1>Set up your business the right way from day one.</h1>
+<p>We help new businesses get properly structured for banking, vendors, and growth. No hype, no subscriptions - just clean paperwork done right.</p>
+<div style="display:flex;gap:10px"><a href="#pricing" class="btn btn-dark">View Packages</a><a href="#" onclick="toggleC();return false" class="btn btn-light">Ask Question</a></div>
+<p style="font-size:11px;color:#888;margin-top:10px">multigenprofitlab@gmail.com • Serving NC + nationwide • Educational guidance only</p>
 </div>
 <div class="card">
-<h3>Complete</h3><div class="price">$397</div>
-<p style="font-size:13px;color:#555">Everything in Growth + LLC guidance, bank account help, Google Profile, 60 days support.</p>
-<a class="btn" style="margin-top:12px;width:100%;text-align:center" href="mailto:multigenprofitlab@gmail.com?subject=I want Complete $397 - MultiGen&body=Hi, I want Complete $397. My name: %0AMy phone: %0A">Buy $397 - Email Us</a>
+<div class="label">Included in every setup</div>
+<div style="font-size:13px;line-height:1.8;margin-top:8px">
+✓ EIN Registration Guidance<br>
+✓ DUNS Number Setup<br>
+✓ Business Bank Checklist<br>
+✓ Vendor Foundation List<br>
+✓ Business Email + Domain Guide<br>
+✓ 1-Page Website Setup
+</div>
+<p style="font-size:11px;color:#666;margin-top:14px">We do not guarantee funding or credit approvals. Educational purposes only.</p>
 </div>
 </div>
 
-<div style="max-width:1100px;margin:0 auto;padding:20px">
-<div style="border:1px solid #eee;border-radius:12px;padding:16px;display:flex;gap:12px">
-<input id="name" placeholder="Name" style="flex:1;padding:10px;border:1px solid #ddd;border-radius:8px">
-<input id="email" placeholder="Email" style="flex:1;padding:10px;border:1px solid #ddd;border-radius:8px">
-<button onclick="save()" style="padding:10px 16px;background:#111;color:#fff;border:none;border-radius:8px">Get Info</button>
+<section id="services">
+<div class="label">Services</div>
+<h2>Everything you need to start clean</h2>
+<div class="grid3">
+<div class="box"><h3>1. Foundation</h3><p>Business structure check, EIN application walkthrough, DUNS setup so your business is verifiable by banks and vendors.</p></div>
+<div class="box"><h3>2. Presence</h3><p>Professional email, simple website, Google Business Profile so your business looks legitimate from day one.</p></div>
+<div class="box"><h3>3. Vendor Starter</h3><p>Curated list of vendors that report to business bureaus, plus application email templates. Educational, not guaranteed.</p></div>
 </div>
-<p id="status" style="font-size:12px;margin-top:6px"></p>
+</section>
+
+<div class="pricing" id="pricing"><div class="pricing-inner">
+<div class="label">Simple pricing</div>
+<h2>Choose your package</h2>
+<p style="color:#555;font-size:14px">One-time fee. State filing fees not included.</p>
+<div class="price-grid">
+<div class="pcard">
+<h3>Starter Guide</h3><div class="pprice">$49 <span>/ one-time</span></div><p style="font-size:12px;color:#555">For DIY founders</p>
+<ul><li>✓ Complete PDF blueprint</li><li>✓ EIN & DUNS steps</li><li>✓ 15 vendor list</li><li>✓ Email scripts</li><li>✓ Checklist</li></ul>
+<a href="mailto:multigenprofitlab@gmail.com?subject=Starter Guide $49" class="btn btn-light" style="width:100%;text-align:center">Get Starter - $49</a>
 </div>
+<div class="pcard popular">
+<div class="badge">MOST POPULAR</div>
+<h3>Growth Setup</h3><div class="pprice">$197 <span>/ one-time</span></div><p style="font-size:12px;color:#555">We guide you through setup</p>
+<ul><li>✓ Everything in Starter</li><li>✓ 30-min 1-on-1 call</li><li>✓ EIN & DUNS done with you</li><li>✓ Business email & domain</li><li>✓ Simple website (1 page)</li><li>✓ 30 days support</li></ul>
+<a href="mailto:multigenprofitlab@gmail.com?subject=Growth Setup $197" class="btn btn-dark" style="width:100%;text-align:center">Start Growth - $197</a>
+</div>
+<div class="pcard">
+<h3>Complete</h3><div class="pprice">$397 <span>/ one-time</span></div><p style="font-size:12px;color:#555">Ready to operate</p>
+<ul><li>✓ Everything in Growth</li><li>✓ LLC filing guidance (NC)</li><li>✓ Bank account setup help</li><li>✓ Google Business Profile</li><li>✓ 60 days priority support</li></ul>
+<a href="mailto:multigenprofitlab@gmail.com?subject=Complete $397" class="btn btn-light" style="width:100%;text-align:center">Start Complete - $397</a>
+</div>
+</div>
+<p style="font-size:11px;color:#777;margin-top:14px">To add Stripe later: Replace mailto links with your Stripe Payment Links - https://buy.stripe.com/...</p>
+</div></div>
 
-<footer style="padding:30px 20px;border-top:1px solid #eee;margin-top:30px;font-size:11px;color:#777">© MultiGen - Pembroke, NC - multigenprofitlab@gmail.com - Educational only, not legal/tax advice. Leads stored in private Sheet.</footer>
+<section id="how">
+<div class="label">How it works</div><h2>3 steps to get started</h2>
+<div class="grid3">
+<div class="box"><h3>1. Choose package</h3><p>Email multigenprofitlab@gmail.com with package name. We send payment link (PayPal / Stripe / Cash App) and onboarding form.</p></div>
+<div class="box"><h3>2. We set up together</h3><p>Schedule call and complete EIN, DUNS, email, website in one session. Most clients finish in 48 hours.</p></div>
+<div class="box"><h3>3. You operate</h3><p>Use checklist and vendor list to build foundation. We stay available for support.</p></div>
+</div>
+</section>
 
-<script>
-const URL='https://script.google.com/macros/s/AKfycbxOwUjSgNWD5OLPC3AEci7Ub_BIE6G0GO52iwkgG4uzsSqenW9VkudHZfTiIbAzK1t5/exec';
-async function save(){
-const name=document.getElementById('name').value, email=document.getElementById('email').value;
-if(!name||!email){document.getElementById('status').innerText='Enter name & email';return;}
-document.getElementById('status').innerText='Saving...';
-await fetch(URL,{method:'POST',mode:'no-cors',body:JSON.stringify({name,email,service:'Homepage Lead'})});
-document.getElementById('status').innerText='✅ Saved! Email us at multigenprofitlab@gmail.com';
-}
-</script>
-</body>
-</html>
+<footer><div style="max-width:1100px;margin:0 auto;display:flex;justify-content:space-between"><div>© 2026 MultiGen - Pembroke, NC - multigenprofitlab@gmail.com<br><span style="font-size:10px">Educational only. Not legal/tax advice. Private Google Sheet storage, no data selling.</span></div><div style="text-align:right">Chatbot: Automated assistant active<br>Leads saved securely</div></div></footer>
+
+<div id="chat"><div id="chead" onclick="toggleC()"><span>💬 Questions? Chat with us</span><span>—</span></div>
+<div id="cbody">
+<div id="cmsgs"><div class="bot">Hi! I'm the automated assistant. We have Starter $49, Growth $197
